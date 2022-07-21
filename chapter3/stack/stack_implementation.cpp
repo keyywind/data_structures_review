@@ -9,6 +9,7 @@ private:
 public:
     int stackSize, stackPointer;  T * __stack = NULL;
     Stack(int stackSize) : stackSize(stackSize), stackPointer(-1) {  init_stack();  }
+    ~Stack() {  dest_stack();  }
     bool empty() {  return (stackPointer == -1);  }
     bool full() {  return (stackPointer == (stackSize - 1));  }
     bool push(T value) {  if (full()) return false;  __stack[++stackPointer] = value;  return true;  }
